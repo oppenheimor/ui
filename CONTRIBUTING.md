@@ -1,22 +1,22 @@
-# Contributing
+# 贡献指南
 
-Thanks for your interest in contributing to ui.shadcn.com. We're happy to have you here.
+感谢您有兴趣为 ui.shadcn.com 做出贡献。我们很高兴有您的参与。
 
-Please take a moment to review this document before submitting your first pull request. We also strongly recommend that you check for open issues and pull requests to see if someone else is working on something similar.
+在提交您的第一个拉取请求之前，请花点时间阅读本文档。我们也强烈建议您查看已开启的 issues 和拉取请求，看看是否有人正在进行类似的工作。
 
-If you need any help, feel free to reach out to [@shadcn](https://twitter.com/shadcn).
+如果您需要任何帮助，欢迎联系 [@shadcn](https://twitter.com/shadcn)。
 
-## About this repository
+## 关于仓库
 
-This repository is a monorepo.
+这是一个多包仓库。
 
-- We use [pnpm](https://pnpm.io) and [`workspaces`](https://pnpm.io/workspaces) for development.
-- We use [Turborepo](https://turbo.build/repo) as our build system.
-- We use [changesets](https://github.com/changesets/changesets) for managing releases.
+- 我们使用 [pnpm](https://pnpm.io) 和 [`workspaces`](https://pnpm.io/workspaces) 进行开发
+- 我们使用 [Turborepo](https://turbo.build/repo) 作为构建系统
+- 我们使用 [changesets](https://github.com/changesets/changesets) 来管理发布
 
-## Structure
+##  结构
 
-This repository is structured as follows:
+仓库结构如下。
 
 ```
 apps
@@ -35,111 +35,111 @@ packages
 └── cli
 ```
 
-| Path                  | Description                              |
+| 路径                  | 描述                              |
 | --------------------- | ---------------------------------------- |
-| `apps/www/app`        | The Next.js application for the website. |
-| `apps/www/components` | The React components for the website.    |
-| `apps/www/content`    | The content for the website.             |
-| `apps/www/registry`   | The registry for the components.         |
-| `packages/cli`        | The `shadcn-ui` package.                 |
+| `apps/www/app`        | 网站的 Next.js 应用程序。 |
+| `apps/www/components` | 网站的 React 组件。    |
+| `apps/www/content`    | 网站的内容。             |
+| `apps/www/registry`   | 组件的注册表。         |
+| `packages/cli`        | `shadcn-ui` 包。                 |
 
-## Development
+## 开发
 
-### Fork this repo
+### Fork 仓库
 
-You can fork this repo by clicking the fork button in the top right corner of this page.
+您可以通过点击本页面右上角的 fork 按钮来 fork 此仓库。
 
-### Clone on your local machine
+### Clone 到你本地的机器上
 
 ```bash
 git clone https://github.com/your-username/ui.git
 ```
 
-### Navigate to project directory
+### 进入项目目录
 
 ```bash
 cd ui
 ```
 
-### Create a new Branch
+### 创建新分支
 
 ```bash
 git checkout -b my-new-branch
 ```
 
-### Install dependencies
+### 安装依赖
 
 ```bash
 pnpm install
 ```
 
-### Run a workspace
+### 运行 workspace 工作区
 
-You can use the `pnpm --filter=[WORKSPACE]` command to start the development process for a workspace.
+可以使用 `pnpm --filter=[WORKSPACE]` 命令来启动工作区的开发过程。
 
-#### Examples
+#### 示例
 
-1. To run the `ui.shadcn.com` website:
+1. 运行 `ui.shadcn.com` 网站:
 
 ```bash
 pnpm --filter=www dev
 ```
 
-2. To run the `shadcn-ui` package:
+2. 运行 `shadcn-ui` 包：
 
 ```bash
 pnpm --filter=shadcn-ui dev
 ```
 
-## Running the CLI Locally
+## 本地运行
 
-To run the CLI locally, you can follow the workflow:
+要在本地运行，可以按照以下工作流进行操作：
 
-1. Start by running the registry (main site) to make sure the components are up to date:
+1. 首先运行注册表（主站点），以确保组件是最新的：
 
    ```bash
    pnpm www:dev
    ```
 
-2. Run the development script for the CLI:
+2. 运行开发脚本：
 
    ```bash
    pnpm shadcn:dev
    ```
 
-3. In another terminal tab, test the CLI by running:
+3. 在另一个终端 tab 中，通过运行以下命令来测试：
 
    ```bash
    pnpm shadcn
    ```
 
-   To test the CLI in a specific app, use a command like:
+   要在特定应用程序中测试命令，请使用以下命令：
 
    ```bash
    pnpm shadcn <init | add | ...> -c ~/Desktop/my-app
    ```
 
-4. To run the tests for the CLI:
+4. 运行测试：
 
    ```bash
    pnpm --filter=shadcn test
    ```
 
-This workflow ensures that you are running the most recent version of the registry and testing the CLI properly in your local environment.
+此工作流程确保您在本地环境中运行的是注册表的最新版本，并正确测试了命令。
 
-## Documentation
+## 文档
 
-The documentation for this project is located in the `www` workspace. You can run the documentation locally by running the following command:
+本项目的文档位于 `www` 工作区中。您可以通过运行以下命令来本地运行文档：
 
 ```bash
 pnpm --filter=www dev
 ```
 
-Documentation is written using [MDX](https://mdxjs.com). You can find the documentation files in the `apps/www/content/docs` directory.
+文档使用 [MDX](https://mdxjs.com) 编写。您可以在 `apps/www/content/docs` 目录中找到文档文件。
 
-## Components
+## 组件
 
-We use a registry system for developing components. You can find the source code for the components under `apps/www/registry`. The components are organized by styles.
+我们使用注册系统来开发组件。您可以在 `apps/www/registry` 下找到组件的源代码。组件按照样式进行组织。
 
 ```bash
 apps
@@ -153,59 +153,51 @@ apps
             └── ui
 ```
 
-When adding or modifying components, please ensure that:
+在添加或修改组件时，请确保：
 
-1. You make the changes for every style.
-2. You update the documentation.
-3. You run `pnpm build:registry` to update the registry.
+1. 对每种样式进行更改。
+2. 更新文档。
+3. 运行 `pnpm build:registry` 更新注册表。
 
-## Commit Convention
+## 提交约定
 
-Before you create a Pull Request, please check whether your commits comply with
-the commit conventions used in this repository.
+在创建 Pull Request 之前，请检查您的提交是否符合
+本仓库使用的提交约定。
 
-When you create a commit we kindly ask you to follow the convention
-`category(scope or module): message` in your commit message while using one of
-the following categories:
+当您创建提交时，我们请您在提交信息中遵循
+`category(scope or module): message` 的约定，并使用以下之一的类别：
 
-- `feat / feature`: all changes that introduce completely new code or new
-  features
-- `fix`: changes that fix a bug (ideally you will additionally reference an
-  issue if present)
-- `refactor`: any code related change that is not a fix nor a feature
-- `docs`: changing existing or creating new documentation (i.e. README, docs for
-  usage of a lib or cli usage)
-- `build`: all changes regarding the build of the software, changes to
-  dependencies or the addition of new dependencies
-- `test`: all changes regarding tests (adding new tests or changing existing
-  ones)
-- `ci`: all changes regarding the configuration of continuous integration (i.e.
-  github actions, ci system)
-- `chore`: all changes to the repository that do not fit into any of the above
-  categories
+- `feat / feature`: 引入完全新代码或新特性的所有更改
+- `fix`: 修复错误的更改（如果存在，理想情况下您还会引用相关的问题）
+- `refactor`: 任何与代码相关的更改，不是修复也不是特性
+- `docs`: 更改或创建新的文档（例如README、库或CLI使用文档）
+- `build`: 软件构建的所有更改，包括对依赖项的更改或添加新的依赖项
+- `test`: 测试的所有更改（添加新测试或更改现有测试）
+- `ci`: 连续集成配置的所有更改（例如github actions、ci系统）
+- `chore`: 不属于上述任何类别的仓库更改
 
-  e.g. `feat(components): add new prop to the avatar component`
+例如：`feat(components): add new prop to the avatar component`
 
-If you are interested in the detailed specification you can visit
-https://www.conventionalcommits.org/ or check out the
-[Angular Commit Message Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).
+如果您对详细规范感兴趣，可以访问
+https://www.conventionalcommits.org/ 或查看
+[Angular提交信息指南](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines)。
 
-## Requests for new components
+## 新组件请求
 
-If you have a request for a new component, please open a discussion on GitHub. We'll be happy to help you out.
+如果您有新的组件请求，请在 GitHub 上开启讨论。我们将很高兴帮助您。
 
 ## CLI
 
-The `shadcn-ui` package is a CLI for adding components to your project. You can find the documentation for the CLI [here](https://ui.shadcn.com/docs/cli).
+`shadcn-ui` 包是一个用于向项目添加组件的 CLI。您可以在[这里](https://ui.shadcn.com/docs/cli)找到 CLI 的文档。
 
-Any changes to the CLI should be made in the `packages/cli` directory. If you can, it would be great if you could add tests for your changes.
+对 CLI 的任何更改都应在 `packages/cli` 目录中进行。如果可能，添加测试来验证您的更改将是非常有益的。
 
-## Testing
+## 测试
 
-Tests are written using [Vitest](https://vitest.dev). You can run all the tests from the root of the repository.
+测试使用[Vitest](https://vitest.dev)编写。您可以从仓库的根目录运行所有测试。
 
 ```bash
 pnpm test
 ```
 
-Please ensure that the tests are passing when submitting a pull request. If you're adding new features, please include tests.
+在提交 pull 请求时，请确保测试通过。如果您添加了新功能，请包含测试。
